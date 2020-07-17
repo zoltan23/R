@@ -32,6 +32,6 @@ for (i in year) {
   stars3 <- as.numeric(str_sub(stars, start = -2))
   
   recruiting_data <- data.frame(rank, team, stars5, stars4, stars3, avg)
-  write.table(recruiting_data, paste(working_dir , "/datasets/college", i, ".txt", sep = ""), row.names = FALSE, sep = " ")
+  #write.table(recruiting_data, paste(working_dir , "/datasets/college", i, ".txt", sep = ""), row.names = FALSE, sep = " ")
 }
 

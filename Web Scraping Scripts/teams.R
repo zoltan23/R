@@ -24,4 +24,5 @@ teams<-data.frame(teams$X1, teams$X5)
 
 dir.create(file.path(working_dir, "datasets"), showWarnings = FALSE)
   
-write.table(teams, paste(working_dir, "/teams.txt", sep = ""), sep =" ")
+write.table(teams, paste(working_dir, "/teams.txt", sep = ""), sep = " ", row.names = FALSE ,append = FALSE)
+

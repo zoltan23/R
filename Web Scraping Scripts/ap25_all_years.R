@@ -8,8 +8,10 @@ working_dir <- getwd()
 
 year <- seq(2006, 2019, by = 1)
 
+
+
 for (i in year) {
-  url <- paste("https://en.wikipedia.org/wiki/", 2007, "_NCAA_Division_I_FBS_football_rankings", sep = "")
+  url <- paste("https://en.wikipedia.org/wiki/", i, "_NCAA_Division_I_FBS_football_rankings", sep = "")
   
   webpage <- read_html(url)
   rank_html <- html_nodes(webpage, 'tbody')
@@ -33,5 +35,12 @@ for (i in year) {
   } else{
     df_final <- cbind(df_final,df_temp)
   }
+  
+  
 }
+
+extractMe <- stringr::str_extract(df_final$team2019, "\\(.+")
+str_replace(df_final$team2019, extractMe, "")
+
+
 #write.table(rankings_data, paste("E:/USB/Web Scraped Datasets/Rankings/Rankings by Team by Year/rankings_teamtxt",sep=""), sep=" ", row.names = FALSE, append = FALSE)
