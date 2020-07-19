@@ -35,12 +35,12 @@ for (i in year) {
   } else{
     df_final <- cbind(df_final,df_temp)
   }
-  
+ df_final[2] <- str_replace(df_final$team2019, "\\(.+", "")
   
 }
 
-extractMe <- stringr::str_extract(df_final$team2019, "\\(.+")
-str_replace(df_final$team2019, extractMe, "")
+# df_final$team2019 <- str_replace(df_final$team2019, "\\(.+", "")
+# trimws(df_final$team2019)
 
 
 #write.table(rankings_data, paste("E:/USB/Web Scraped Datasets/Rankings/Rankings by Team by Year/rankings_teamtxt",sep=""), sep=" ", row.names = FALSE, append = FALSE)

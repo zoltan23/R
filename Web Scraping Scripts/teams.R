@@ -20,9 +20,9 @@ tbls_ls <- webpage %>%
   
 teams<-data.frame(tbls_ls[1])  
 teams<-teams[-1,]
-teams<-data.frame(teams$X1, teams$X5)
+teams<-data.frame(teams$X1, teams$X6)
 
-dir.create(file.path(working_dir, "datasets"), showWarnings = FALSE)
+#dir.create(file.path(working_dir, "datasets"), showWarnings = FALSE)
   
-write.table(teams, paste(working_dir, "/teams.txt", sep = ""), sep = " ", row.names = FALSE ,append = FALSE)
-
+#write.table(teams, paste(working_dir, "/teams.txt", sep = ""), sep = " ", row.names = FALSE ,append = FALSE)
+teams
